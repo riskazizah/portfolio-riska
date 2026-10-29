@@ -17,7 +17,7 @@ const projects = [
     tech: ['PRD', 'User Stories', 'SQL Query', 'Blackbox Testing', 'Tesseract OCR', 'MySQL', 'Laravel/PHP'],
     repoUrl: 'https://github.com/riskazizah/DMS-Arsip',
     images: [
-      '/assets/uiux/ocr-dms/dms-search-ocr.png',
+      '/uiux/ocr-dms/dms-search-ocr.png?v=2',
       '/assets/uiux/ocr-dms/dms-upload.png',
       '/assets/uiux/ocr-dms/dms-detail-metadata.png',
     ],
