@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Pastel Portfolio Palette ───────────────── */
+  --color-cream:       #FEFAF3;  /* Main background          */
+  --color-petal:       #F6E2E9;  /* Card / section bg        */
+  --color-sage-light:  #B8CFB3;  /* Secondary accent, badges */
+  --color-sage:        #84A282;  /* Primary button, icons    */
+  --color-sage-dark:   #5f7a5d;  /* Hover state              */
+  --color-ink:         #27372B;  /* Body text                */
+  --color-ink-muted:   #4a5e50;  /* Muted / secondary text   */
+  --color-ink-faint:   #7a9080;  /* Placeholder / disabled   */
+  --color-border:      #dde8d8;  /* Subtle borders           */
+  --color-border-pink: #e8ccd4;  /* Pink section borders     */
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  transition: background-color 0.3s, color 0.3s;
+}
