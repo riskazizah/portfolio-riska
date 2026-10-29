@@ -28,7 +28,7 @@ export default function App() {
         <div className="flex flex-col items-center justify-center gap-1">
           <span className="text-xl font-bold" style={{ color: 'var(--color-sage)' }}>RN</span>
           <p className="text-xs" style={{ color: 'var(--color-ink-faint)' }}>
-            System Analyst · Business Analyst · Technical Writer
+            © 2026 · All Rights Reserved
           </p>
         </div>
       </footer>
