@@ -18,8 +18,8 @@ const projects = [
     repoUrl: 'https://github.com/riskazizah/DMS-Arsip',
     images: [
       '/uiux/ocr-dms/dms-search-ocr.png?v=2',
-      '/assets/uiux/ocr-dms/dms-upload.png',
-      '/assets/uiux/ocr-dms/dms-detail-metadata.png',
+      '/uiux/ocr-dms/dms-upload.png?v=2',
+      '/uiux/ocr-dms/dms-detail-metadata.png?v=2',
     ],
     tabs: {
       Problem: 'Pengelolaan arsip fisik di instansi memerlukan waktu pencarian 15-30 menit per dokumen, rentan kehilangan, dan tidak ada sistem penelusuran digital yang efisien.',
