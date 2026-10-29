@@ -17,9 +17,9 @@ const projects = [
     tech: ['PRD', 'User Stories', 'SQL Query', 'Blackbox Testing', 'Tesseract OCR', 'MySQL', 'Laravel/PHP'],
     repoUrl: 'https://github.com/riskazizah/DMS-Arsip',
     images: [
-      '/uiux/ocr-dms/dms-search-ocr.png',
-      '/uiux/ocr-dms/dms-upload.png',
-      '/uiux/ocr-dms/dms-detail-metadata.png',
+      '/assets/uiux/ocr-dms/dms-search-ocr.png',
+      '/assets/uiux/ocr-dms/dms-upload.png',
+      '/assets/uiux/ocr-dms/dms-detail-metadata.png',
     ],
     tabs: {
       Problem: 'Pengelolaan arsip fisik di instansi memerlukan waktu pencarian 15-30 menit per dokumen, rentan kehilangan, dan tidak ada sistem penelusuran digital yang efisien.',
@@ -35,7 +35,7 @@ const projects = [
     badgeColor: 'amber',
     tech: ['Model SECI', 'Google AI Studio', 'Chatbot AI', 'Blackbox Testing', 'UML'],
     images: [
-      '/uiux/kms/kms-swaraswarna.png',
+      '/assets/uiux/kms/kms-swaraswarna.jpg',
     ],
     tabs: {
       Problem: 'Organisasi kesulitan mengkurasi dan mendistribusikan pengetahuan internal secara efektif, menyebabkan duplikasi kerja dan hilangnya institutional knowledge.',
@@ -52,9 +52,9 @@ const projects = [
     tech: ['System Analysis', 'Use Case Diagram', 'Activity Diagram', 'SRS', 'ERD', 'Canva UI Mockup', 'SDLC Waterfall'],
     docBadge: 'Enterprise Documentation',
     images: [
-      '/uiux/arenatek/arenatek-booking.png',
-      '/uiux/arenatek/arenatek-checkout.png',
-      '/uiux/arenatek/arenatek-success.png',
+      '/assets/uiux/arenatek/arenatek-booking.jpg',
+      '/assets/uiux/arenatek/arenatek-checkout.jpg',
+      '/assets/uiux/arenatek/arenatek-success.png',
     ],
     tabs: {
       Problem: 'Pengelolaan penyewaan fasilitas lapangan olahraga (tenis, futsal, basket) di BBPMB tekMIRA masih manual menggunakan Excel dan WhatsApp. Hal ini memicu keterlambatan konfirmasi, risiko jadwal bentrok antara pegawai internal dan penyewa umum, serta pencatatan bukti pembayaran transfer yang terfragmentasi.',
@@ -121,7 +121,7 @@ function GalleryModal({ images, title, startIndex, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl"
         style={{ backgroundColor: 'var(--color-cream)' }}
         onClick={e => e.stopPropagation()}
       >
@@ -143,13 +143,13 @@ function GalleryModal({ images, title, startIndex, onClose }) {
           </div>
         </div>
 
-        {/* Image */}
-        <div className="relative flex items-center justify-center" style={{ backgroundColor: 'var(--color-petal)', minHeight: '300px' }}>
+        {/* Image — object-contain + intrinsic sizing so HD screenshots stay sharp */}
+        <div className="relative flex items-center justify-center p-3 md:p-4" style={{ backgroundColor: 'var(--color-petal)', minHeight: '300px' }}>
           <img
             key={current}
             src={images[current]}
             alt={`${title} screenshot ${current + 1}`}
-            className="max-h-[60vh] w-full object-contain"
+            className="screenshot max-h-[80vh] max-w-full w-auto h-auto object-contain"
             onError={(e) => {
               e.currentTarget.onerror = null
               e.currentTarget.removeAttribute('src')
@@ -196,7 +196,7 @@ function GalleryModal({ images, title, startIndex, onClose }) {
                 className="shrink-0 w-14 h-10 rounded-md overflow-hidden border-2 transition-colors"
                 style={{ borderColor: i === current ? 'var(--color-sage)' : 'transparent' }}
               >
-                <img src={img} alt="" className="w-full h-full object-cover" />
+                <img src={img} alt="" className="screenshot w-full h-full object-contain" />
               </button>
             ))}
           </div>
@@ -223,13 +223,13 @@ function ProjectCard({ project }) {
           <button
             onClick={() => setGalleryOpen(true)}
             aria-label="Open image gallery"
-            className="relative w-full overflow-hidden group"
-            style={{ height: '160px', backgroundColor: 'var(--color-petal)' }}
+            className="relative w-full aspect-[16/10] overflow-hidden group"
+            style={{ backgroundColor: 'var(--color-petal)' }}
           >
             <img
               src={project.images[0]}
               alt={`${project.title} preview`}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="screenshot w-full h-full object-contain"
               onError={(e) => {
                 e.currentTarget.onerror = null
                 e.currentTarget.style.display = 'none'
